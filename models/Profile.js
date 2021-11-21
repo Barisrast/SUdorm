@@ -46,17 +46,22 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+      hobbies: {
+        type: String,
+        required: true,
+      },
       wearHeadphonesBool: {
         type: Boolean,
         required: true,
       },
-      searchingForBool: {
-        //is the user currently looking for a roommate
+      spiritAnimal: {
         type: String,
-        required: true,
       },
       additionalPreferences: {
         type: String,
+      },
+      searchingRoommate: {
+        type: Boolean,
       },
     },
   ],
@@ -77,6 +82,7 @@ const ProfileSchema = new mongoose.Schema({
       type: String,
     },
   },
+  // we might include reviews section if we choose to implement ex-roommate reviews
   date: {
     type: Date,
     default: Date.now,
