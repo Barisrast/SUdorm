@@ -158,5 +158,36 @@ router.delete("/", auth, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+// @route    PUT api/profile/preferences
+// @desc     Add profile preferences
+// @access   Private
+router.put(
+  "/preferences",
+  auth,
+  check("smokerBool", "Smoking field is required").notEmpty(),
+  check("sleepRoutine", "Sleep routine field is required").notEmpty(),
+  check("tidiness", "Tidiness field is required").notEmpty(),
+  check("noiseTolerance", "Noise tolerance field is required").notEmpty(),
+  check("spiritAnimal", "Spirit animal field is required").notEmpty(),
+  check("searchingRoomate", "Actively searching field is required").notEmpty(),
+
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const profile = await Profile.findOne({ user: req.user.id });
+
+      await profile.save();
+
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
 
 module.exports = router;
