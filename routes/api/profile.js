@@ -190,4 +190,20 @@ router.put(
   }
 );
 
+router.delete("/preferences/:preference_id", auth, async (req, res) => {
+  try {
+    const foundProfile = await Profile.findOne({ user: req.user.id });
+
+    foundProfile.preferences = foundProfile.preferences.filter(
+      (pref) => pref._id.toString() !== req.params.preference_id
+    );
+
+    await foundProfile.save();
+    return res.status(200).json(foundProfile);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ msg: "Server error" });
+  }
+});
+
 module.exports = router;
