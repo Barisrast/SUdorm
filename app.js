@@ -29,6 +29,10 @@ app.set('view engine', 'ejs');
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
 // Express session
 app.use(
   session({
