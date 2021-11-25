@@ -5,42 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 export default function Signup() {
 
-    // state = {
-    //     name: '',
-    //     surname: '',
-    //     email: '',
-    //     password: '',
-    //     error: ''
-    // }
-    // onNameChange = (e) => {
-    //     const name = e.target.value;
-    //     this.setState(() => ({ name }))
-    // }
-    // onSurnameChange = (e) => {
-    //     const surname = e.target.value;
-    //     this.setState(() => ({ surname }))
-    // }
-    // onEmailChange = (e) => {
-    //     const email = e.target.value;
-    //     this.setState(() => ({ email }))
-    // }
-    // onPasswordChange = (e) => {
-    //     const password = e.target.value;
-    //     this.setState(() => ({ password }))
-    // }
-
-    // onSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     if (!this.state.name || !this.state.surname || !this.state.email || !this.state.password) {
-
-    //         this.setState({ error: "Please fill in all the blanks..." })
-
-    //     } else {
-    //         this.setState({ error: "" })
-    //     }
-
-    // }
+   
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
