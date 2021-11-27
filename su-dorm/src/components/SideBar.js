@@ -4,7 +4,7 @@ import './SideBar.css';
 
 export default function SideBar() {
     return (
-        <div>
+        <div className="sidebar">
             <div className="wrapper">
                 <div className="sidebar">
                     <div className="profile">

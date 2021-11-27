@@ -1,14 +1,15 @@
+.sidebar{
+    position: fixed;
+}
 .wrapper .sidebar{
     background: rgb(5, 68, 104);
-    position: fixed;
-    top: 0;
-    left: 0;
+    margin: 0px;
     width: 300px;
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
 }
-.wrapper .sidebar .profile{
+.profile{
     margin-bottom: 30px;
     text-align: center;
 }
@@ -21,12 +22,12 @@ img{
     margin: 0 auto;
 }
 
- h3{
+h3{
     color: #ffffff;
     margin: 10px 0 5px;
 }
 
- p{
+p{
     color: rgb(206, 240, 253);
     font-size: 14px;
 }
@@ -34,7 +35,7 @@ ul{
     list-style-type: none;
     text-align: center;
 }
-ul li a{
+a{
     display: block;
     padding: 10px;
     margin-right: 10%;
@@ -43,22 +44,11 @@ ul li a{
     font-size: 16px;
     text-decoration: none;
 }
-.wrapper .sidebar ul li a:hover,
-.wrapper .sidebar ul li a.active{
+a:hover, a.active{
     color: #0c7db1;
 
     background:white;
     border-right: 2px solid rgb(5, 68, 104);
-}
-
-.wrapper .sidebar ul li a:hover .icon,
-.wrapper .sidebar ul li a.active .icon{
-    color: #0c7db1;
-}
-
-.wrapper .sidebar ul li a:hover:before,
-.wrapper .sidebar ul li a.active:before{
-    display: block;
 }
 
 
