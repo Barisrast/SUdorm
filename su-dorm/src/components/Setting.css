@@ -1,0 +1,13 @@
+.settings{
+    -webkit-box-shadow: 0 40px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 5px 60px 90px 5px rgba(0,0,0,0.3);
+    background-color: white;
+    width: 50%;
+    height: 150px;
+    border-radius: 25px;
+    margin-left: 35%;
+}
+.picture-setting{
+    margin-left: 15%;
+    margin-top: 20px;
+}

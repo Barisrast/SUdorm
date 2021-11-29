@@ -44,6 +44,9 @@ a{
     font-size: 16px;
     text-decoration: none;
 }
+.item-nav{
+    color: white;
+}
 a:hover, a.active{
     color: #0c7db1;
 

@@ -14,29 +14,29 @@ export default function SideBar() {
                     <ul>
                         <li>
                             <a href="#" >
-                                <span className="item">Home</span>
+                                <span className="item-nav">Home</span>
                             </a>
                         </li>
                         
                         <li>
                             <a href="#">
-                                <span className="item">Forum</span>
+                                <span className="item-nav">Forum</span>
                             </a>
                         </li>
                         
                         <li>
                             <a href="#">
-                                <span className="item">Match</span>
+                                <span className="item-nav">Match</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span className="item">Settings</span>
+                                <span className="item-nav">Settings</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span className="item">Filtered Search</span>
+                                <span className="item-nav">Filtered Search</span>
                             </a>
                         </li>
                     </ul>
