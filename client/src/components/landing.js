@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 export const Landing = () => {
   return (
@@ -48,14 +49,14 @@ export const Landing = () => {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="/users/register">
+                  <Link className="nav-link" to="/register">
                     Sign Up
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/users/login">
+                  <Link className="nav-link" to="/login">
                     Log In
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
