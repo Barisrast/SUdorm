@@ -41,7 +41,7 @@ router.post(
   "/",
   auth,
   check("gender", "Gender is required").notEmpty(),
-  check("class", "Class is required").notEmpty(),
+  check("classYear", "Class is required").notEmpty(),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

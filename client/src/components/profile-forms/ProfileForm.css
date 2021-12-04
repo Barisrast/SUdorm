@@ -1,0 +1,65 @@
+.matchForm {
+  display: inline;
+}
+.form-container {
+  -webkit-box-shadow: 0 40px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 60px 90px 5px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  width: 50%;
+  border-radius: 25px;
+  margin-left: 35%;
+}
+
+.innerForm-container {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+label {
+  float: left;
+  font-size: 13pt;
+  font-weight: bold;
+}
+
+span {
+  margin: 5px;
+}
+.gender-container,
+.major-container,
+.classYear-container,
+.bio-container,
+.smoker-container,
+.sleepRoutine-container,
+.tidiness-container,
+.noiseTolerance-container,
+.hobbies-container,
+.preferences-container,
+.headphones-container,
+.roommate-container,
+.socailMedia-container {
+  width: 90%;
+  text-align: right;
+  margin-top: 10px;
+}
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+}
+.instagram,
+.twitter,
+.facebook,
+.youtube,
+.linkedin {
+  width: 100%;
+  margin-top: 10px;
+}
+.save-btn {
+  margin-top: 10px;
+  background: white;
+  width: 10%;
+}
+.save-btn:hover {
+  background-color: #040239;
+  color: #01bdf0;
+}

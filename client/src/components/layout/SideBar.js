@@ -4,11 +4,13 @@ import "./SideBar.css";
 import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 import PropTypes from "prop-types";
+import { logout } from "../../actions/auth";
 
 const SideBar = ({
   getCurrentProfile,
   deleteAccount,
-  auth: { user },
+  auth: { user, isAuthenticated },
+  logout,
   profile: { profile },
 }) => {
   useEffect(() => {
@@ -51,6 +53,12 @@ const SideBar = ({
                 <span className="item-nav">Filtered Search</span>
               </a>
             </li>
+            <li>
+              <a onClick={logout} href="#!">
+                <i className="fas fa-sign-out-alt" />{" "}
+                <span className="hide-sm">Logout</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -69,48 +77,4 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(SideBar);
-
-// export default function SideBar() {
-//   return (
-//     <div className="sidebar">
-//       <div className="wrapper">
-//         <div className="sidebar">
-//           <div className="profile">
-//             <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-//             <h3>NAME SURNAME</h3>
-//           </div>
-//           <ul>
-//             <li>
-//               <a href="#">
-//                 <span className="item-nav">Home</span>
-//               </a>
-//             </li>
-
-//             <li>
-//               <a href="#">
-//                 <span className="item-nav">Forum</span>
-//               </a>
-//             </li>
-
-//             <li>
-//               <a href="#">
-//                 <span className="item-nav">Match</span>
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#">
-//                 <span className="item-nav">Settings</span>
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#">
-//                 <span className="item-nav">Filtered Search</span>
-//               </a>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+export default connect(mapStateToProps, { getCurrentProfile, logout })(SideBar);

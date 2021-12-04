@@ -9,6 +9,7 @@ import Alert from "./components/layout/Alert";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import SideBar from "./components/layout/SideBar";
+import ProfileForm from "./components/profile-forms/ProfileForm";
 
 //redux
 import { Provider } from "react-redux";
@@ -45,6 +46,10 @@ const App = () => {
             <Route
               path="dashboard"
               element={<PrivateRoute component={Dashboard} />}
+            />
+            <Route
+              path="create-profile"
+              element={<PrivateRoute component={ProfileForm} />}
             />
           </Fragment>
         </Routes>
