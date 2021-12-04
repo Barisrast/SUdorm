@@ -1,6 +1,7 @@
 import React from "react";
 import "./SideBar.css";
 // import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 
 export default function SideBar() {
   return (
