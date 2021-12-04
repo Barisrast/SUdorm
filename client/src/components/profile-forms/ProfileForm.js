@@ -16,9 +16,6 @@ const initialState = {
   major: "",
   classYear: "",
   bio: "",
-  skills: "",
-  githubusername: "",
-  bio: "",
   sleepRoutine: "",
   socialSpectrum: "",
   tidiness: "",
@@ -102,30 +99,30 @@ const ProfileForm = ({
       <SideBar />
       <div className="matchForm">
         <div className="form-container">
-          <form>
+          <form className="form" onSubmit={onSubmit}>
             <div className="innerForm-container">
               <div className="gender-container">
                 <label>Gender:</label>
                 <div className="genderRadio-container">
                   <input
                     type="radio"
-                    name="gender-radio"
-                    id="male"
+                    name="gender"
                     value="male"
+                    onChange={onChange}
                   ></input>
                   <span>Male</span>
                   <input
                     type="radio"
-                    name="gender-radio"
-                    id="female"
+                    name="gender"
                     value="female"
+                    onChange={onChange}
                   ></input>
                   <span>Female</span>
                   <input
                     type="radio"
-                    name="gender-radio"
-                    id="other"
+                    name="gender"
                     value="other"
+                    onChange={onChange}
                   ></input>
                   <span>Other</span>
                 </div>
@@ -133,17 +130,32 @@ const ProfileForm = ({
               <hr></hr>
               <div className="major-container">
                 <label>Major:</label>
-                <input type="text" className="major"></input>
+                <input
+                  type="text"
+                  name="major"
+                  value={major}
+                  onChange={onChange}
+                ></input>
               </div>
               <hr></hr>
               <div className="classYear-container">
                 <label>Class Year:</label>
-                <input type="number" className="classYear"></input>
+                <input
+                  type="text"
+                  name="classYear"
+                  value={classYear}
+                  onChange={onChange}
+                ></input>
               </div>
               <hr></hr>
               <div className="bio-container">
                 <label>Bio:</label>
-                <textarea className="bio"></textarea>
+                <input
+                  type="text"
+                  name="bio"
+                  value={bio}
+                  onChange={onChange}
+                ></input>
               </div>
               <hr></hr>
               <div className="smoker-container">
@@ -153,6 +165,7 @@ const ProfileForm = ({
                   name="smoker-radio"
                   id="smoker-true"
                   value="True"
+                  onChange={onChange}
                 ></input>
                 <span>True</span>
                 <input
@@ -160,22 +173,43 @@ const ProfileForm = ({
                   name="smoker-radio"
                   id="smoker-false"
                   value="False"
+                  onChange={onChange}
                 ></input>
                 <span>False</span>
               </div>
               <hr></hr>
               <div className="sleepRoutine-container">
                 <label>Sleep Routine</label>
-                <input type="text" className="sleepRoutine"></input>
+                <input
+                  type="text"
+                  name="sleepRoutine"
+                  value={sleepRoutine}
+                  onChange={onChange}
+                ></input>
               </div>
               <hr></hr>
               <div className="tidiness-container">
                 <label>Tidiness:</label>
-                <input type="radio" name="tidiness-radio" id="tidy"></input>
+                <input
+                  type="radio"
+                  name="tidiness"
+                  value="tidy"
+                  onChange={onChange}
+                ></input>
                 <span>Tidy</span>
-                <input type="radio" name="tidiness-radio" id="normal"></input>
+                <input
+                  type="radio"
+                  name="tidiness"
+                  value="normal"
+                  onChange={onChange}
+                ></input>
                 <span>Normal</span>
-                <input type="radio" name="tidiness-radio" id="messy"></input>
+                <input
+                  type="radio"
+                  name="tidiness"
+                  value="messy"
+                  onChange={onChange}
+                ></input>
                 <span>Messy</span>
               </div>
               <hr></hr>
@@ -183,35 +217,46 @@ const ProfileForm = ({
                 <label>Noise Tolerance:</label>
                 <input
                   type="radio"
-                  name="noiseTolerance-radio"
+                  name="noiseTolerance"
                   id="high-tolerance"
                   value="High"
+                  onChange={onChange}
                 ></input>
                 <span>High</span>
                 <input
                   type="radio"
-                  name="noiseTolerance-radio"
-                  id="normal-tolerance"
+                  name="noiseTolerance"
                   value="Normal"
+                  onChange={onChange}
                 ></input>
                 <span>Normal</span>
                 <input
                   type="radio"
-                  name="noiseTolerance-radio"
-                  id="low-tolerance"
+                  name="noiseTolerance"
                   value="Low"
+                  onChange={onChange}
                 ></input>
                 <span>Low</span>
               </div>
               <hr></hr>
               <div className="hobbies-container">
                 <label>Hobbies</label>
-                <input type="text" className="hobbies"></input>
+                <input
+                  type="text"
+                  name="hobbies"
+                  value={hobbies}
+                  onChange={onChange}
+                ></input>
               </div>
               <hr></hr>
               <div className="preferences-container">
                 <label>Additional Preferences</label>
-                <input type="text" className="preferences"></input>
+                <input
+                  type="text"
+                  name="additionalPreferences"
+                  value={additionalPreferences}
+                  onChange={onChange}
+                ></input>
               </div>
               <hr></hr>
               <div className="headphones-container">
@@ -221,6 +266,7 @@ const ProfileForm = ({
                   name="Headphones-radio"
                   id="Headphones-yes"
                   value="Yes"
+                  onChange={onChange}
                 ></input>
                 <span>Yes</span>
                 <input
@@ -228,6 +274,7 @@ const ProfileForm = ({
                   name="Headphones-radio"
                   id="Headphones-no"
                   value="No"
+                  onChange={onChange}
                 ></input>
                 <span>No</span>
               </div>
@@ -239,6 +286,7 @@ const ProfileForm = ({
                   name="roommate-radio"
                   id="roommate-true"
                   value="Yes"
+                  onChange={onChange}
                 ></input>
                 <span>Yes</span>
                 <input
@@ -246,31 +294,57 @@ const ProfileForm = ({
                   name="roommate-radio"
                   id="roommate-false"
                   value="No"
+                  onChange={onChange}
                 ></input>
                 <span>No</span>
               </div>
               <hr></hr>
-              <div className="socailMedia-container">
-                <div className="instagram">
+              <div className="socialMedia-container">
+                <div className="InstagramDiv">
                   <label>Instagram</label>
-                  <input type="text" id="instagram"></input>
+                  <input
+                    type="text"
+                    name="instagram"
+                    value={instagram}
+                    onChange={onChange}
+                  ></input>
                 </div>
 
-                <div className="facebook">
+                <div className="FacebookDiv">
                   <label>Facebook</label>
-                  <input type="text" id="Facebook"></input>
+                  <input
+                    type="text"
+                    name="facebook"
+                    value={facebook}
+                    onChange={onChange}
+                  ></input>
                 </div>
-                <div className="twitter">
+                <div className="TwitterDiv">
                   <label>Twitter</label>
-                  <input type="text" id="Twitter"></input>
+                  <input
+                    type="text"
+                    name="twitter"
+                    value={twitter}
+                    onChange={onChange}
+                  ></input>
                 </div>
-                <div className="youtube">
+                <div className="YoutubeDiv">
                   <label>Youtube</label>
-                  <input type="text" id="Youtube"></input>
+                  <input
+                    type="text"
+                    name="youtube"
+                    value={youtube}
+                    onChange={onChange}
+                  ></input>
                 </div>
-                <div className="linkedin">
+                <div className="LinkedinDiv">
                   <label>LinkedIn</label>
-                  <input type="text" id="LinkedIn"></input>
+                  <input
+                    type="text"
+                    name="linkedin"
+                    value={linkedin}
+                    onChange={onChange}
+                  ></input>
                 </div>
               </div>
               <hr></hr>
