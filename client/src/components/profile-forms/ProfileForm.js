@@ -39,8 +39,6 @@ const ProfileForm = ({
 
   const creatingProfile = useMatch("/create-profile");
 
-  const [displaySocialInputs, toggleSocialInputs] = useState(false);
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -54,9 +52,7 @@ const ProfileForm = ({
       for (const key in profile) {
         if (key in profileData) profileData[key] = profile[key];
       }
-      for (const key in profile.preferences) {
-        if (key in profileData) profileData[key] = profile.preferences[key];
-      }
+
       for (const key in profile.social) {
         if (key in profileData) profileData[key] = profile.social[key];
       }

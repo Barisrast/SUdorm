@@ -18,46 +18,44 @@ const ProfileSchema = new mongoose.Schema({
   bio: {
     type: String,
   },
-  preferences: [
-    {
-      smokerBool: {
-        type: Boolean,
-        required: true,
-      },
-      sleepRoutine: {
-        type: String,
-        required: true,
-      },
-      socialSpectrum: {
-        type: String,
-      },
-      tidiness: {
-        type: String,
-        required: true,
-      },
-      noiseTolerance: {
-        type: String,
-        required: true,
-      },
-      hobbies: {
-        type: String,
-        required: true,
-      },
-      wearHeadphonesBool: {
-        type: Boolean,
-        required: true,
-      },
-      spiritAnimal: {
-        type: String,
-      },
-      additionalPreferences: {
-        type: String,
-      },
-      searchingRoommate: {
-        type: Boolean,
-      },
-    },
-  ],
+
+  smokerBool: {
+    type: Boolean,
+    required: true,
+  },
+  sleepRoutine: {
+    type: String,
+    required: true,
+  },
+  socialSpectrum: {
+    type: String,
+  },
+  tidiness: {
+    type: String,
+    required: true,
+  },
+  noiseTolerance: {
+    type: String,
+    required: true,
+  },
+  hobbies: {
+    type: String,
+    required: true,
+  },
+  wearHeadphonesBool: {
+    type: Boolean,
+    required: true,
+  },
+  spiritAnimal: {
+    type: String,
+  },
+  additionalPreferences: {
+    type: String,
+  },
+  searchingRoommate: {
+    type: Boolean,
+  },
+
   social: {
     youtube: {
       type: String,
