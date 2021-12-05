@@ -27,9 +27,9 @@ const SideBar = ({
           </div>
           <ul>
             <li>
-              <a href="#">
+              <Link to="/dashboard">
                 <span className="item-nav">Home</span>
-              </a>
+              </Link>
             </li>
 
             <li>
@@ -52,6 +52,11 @@ const SideBar = ({
               <a href="#">
                 <span className="item-nav">Filtered Search</span>
               </a>
+            </li>
+            <li>
+              <Link to="/profiles">
+                <span className="item-nav">All Profiles</span>
+              </Link>
             </li>
             <li>
               <a onClick={logout} href="#!">

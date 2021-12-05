@@ -19,7 +19,7 @@ import {
  JSON.stringify or JSON.parse
 */
 
-// Get current users profile
+// Get current user's profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
     const res = await api.get("/profile/me");
@@ -68,22 +68,6 @@ export const getProfileById = (userId) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
-    });
-  }
-};
-
-// Get Github repos
-export const getGithubRepos = (username) => async (dispatch) => {
-  try {
-    const res = await api.get(`/profile/github/${username}`);
-
-    dispatch({
-      type: GET_REPOS,
-      payload: res.data,
-    });
-  } catch (err) {
-    dispatch({
-      type: NO_REPOS,
     });
   }
 };

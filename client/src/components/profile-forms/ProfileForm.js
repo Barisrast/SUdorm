@@ -56,9 +56,6 @@ const ProfileForm = ({
       for (const key in profile.social) {
         if (key in profileData) profileData[key] = profile.social[key];
       }
-      // the skills may be an array from our API response
-      if (Array.isArray(profileData.skills))
-        profileData.skills = profileData.skills.join(", ");
       // set local state with the profileData
       setFormData(profileData);
     }
