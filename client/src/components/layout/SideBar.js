@@ -33,7 +33,7 @@ const SideBar = ({
             </li>
 
             <li>
-              <Link to="posts">
+              <Link to="/posts">
                 <span className="item-nav">Forum</span>
               </Link>
             </li>
