@@ -33,9 +33,9 @@ const SideBar = ({
             </li>
 
             <li>
-              <a href="#">
+              <Link to="posts">
                 <span className="item-nav">Forum</span>
-              </a>
+              </Link>
             </li>
 
             <li>
