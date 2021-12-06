@@ -18,7 +18,6 @@ const ProfileSchema = new mongoose.Schema({
   bio: {
     type: String,
   },
-
   smokerBool: {
     type: Boolean,
     required: true,
@@ -55,7 +54,6 @@ const ProfileSchema = new mongoose.Schema({
   searchingRoommate: {
     type: Boolean,
   },
-
   social: {
     youtube: {
       type: String,

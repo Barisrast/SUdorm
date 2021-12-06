@@ -73,6 +73,7 @@ const ProfileForm = ({
     hobbies,
     spiritAnimal,
     additionalPreferences,
+    searchingRoommate,
     twitter,
     facebook,
     linkedin,
@@ -118,6 +119,12 @@ const ProfileForm = ({
                     onChange={onChange}
                   ></input>
                   <span>Other</span>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="other"
+                    onChange={onChange}
+                  ></input>
                 </div>
               </div>
               <hr></hr>
@@ -155,17 +162,15 @@ const ProfileForm = ({
                 <label>Smoker:</label>
                 <input
                   type="radio"
-                  name="smoker-radio"
-                  id="smoker-true"
-                  value="True"
+                  name="smokerBool"
+                  value={true}
                   onChange={onChange}
                 ></input>
                 <span>True</span>
                 <input
                   type="radio"
-                  name="smoker-radio"
-                  id="smoker-false"
-                  value="False"
+                  name="smokerBool"
+                  value={false}
                   onChange={onChange}
                 ></input>
                 <span>False</span>
@@ -177,6 +182,17 @@ const ProfileForm = ({
                   type="text"
                   name="sleepRoutine"
                   value={sleepRoutine}
+                  onChange={onChange}
+                ></input>
+              </div>
+              <hr></hr>
+              <hr></hr>
+              <div className="spiritAnimal-container">
+                <label>Spirit Animal</label>
+                <input
+                  type="text"
+                  name="spiritAnimal"
+                  value={spiritAnimal}
                   onChange={onChange}
                 ></input>
               </div>
@@ -204,6 +220,32 @@ const ProfileForm = ({
                   onChange={onChange}
                 ></input>
                 <span>Messy</span>
+              </div>
+              <hr></hr>
+
+              <div className="tidiness-container">
+                <label>How social are you?:</label>
+                <input
+                  type="radio"
+                  name="socialSpectrum"
+                  value="Very Social"
+                  onChange={onChange}
+                ></input>
+                <span>Very Social</span>
+                <input
+                  type="radio"
+                  name="socialSpectrum"
+                  value="normal"
+                  onChange={onChange}
+                ></input>
+                <span>Normal</span>
+                <input
+                  type="radio"
+                  name="socialSpectrum"
+                  value="Unsocial"
+                  onChange={onChange}
+                ></input>
+                <span>Unsocial</span>
               </div>
               <hr></hr>
               <div className="noiseTolerance-container">
@@ -273,20 +315,18 @@ const ProfileForm = ({
               </div>
               <hr></hr>
               <div className="roommate-container">
-                <label>Searching Roommate</label>
+                <label>Are You Looking For a Roommate?</label>
                 <input
                   type="radio"
-                  name="roommate-radio"
-                  id="roommate-true"
-                  value="Yes"
+                  name="searchingRoommate"
+                  value={true}
                   onChange={onChange}
                 ></input>
                 <span>Yes</span>
                 <input
                   type="radio"
-                  name="roommate-radio"
-                  id="roommate-false"
-                  value="No"
+                  name="searchingRoommate"
+                  value={false}
                   onChange={onChange}
                 ></input>
                 <span>No</span>

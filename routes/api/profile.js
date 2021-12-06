@@ -54,7 +54,16 @@ router.post(
       major,
       classYear,
       bio,
-      preferences,
+      smokerBool,
+      sleepRoutine,
+      socialSpectrum,
+      tidiness,
+      noiseTolerance,
+      hobbies,
+      wearHeadphonesBool,
+      spiritAnimal,
+      additionalPreferences,
+      searchingRoommate,
       youtube,
       twitter,
       instagram,
@@ -156,53 +165,6 @@ router.delete("/", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
-  }
-});
-// @route    PUT api/profile/preferences
-// @desc     Add profile preferences
-// @access   Private
-router.put(
-  "/preferences",
-  auth,
-  check("smokerBool", "Smoking field is required").notEmpty(),
-  check("sleepRoutine", "Sleep routine field is required").notEmpty(),
-  check("tidiness", "Tidiness field is required").notEmpty(),
-  check("noiseTolerance", "Noise tolerance field is required").notEmpty(),
-  check("spiritAnimal", "Spirit animal field is required").notEmpty(),
-  check("searchingRoomate", "Actively searching field is required").notEmpty(),
-
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
-    try {
-      const profile = await Profile.findOne({ user: req.user.id });
-
-      await profile.save();
-
-      res.json(profile);
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send("Server Error");
-    }
-  }
-);
-
-router.delete("/preferences/:preference_id", auth, async (req, res) => {
-  try {
-    const foundProfile = await Profile.findOne({ user: req.user.id });
-
-    foundProfile.preferences = foundProfile.preferences.filter(
-      (pref) => pref._id.toString() !== req.params.preference_id
-    );
-
-    await foundProfile.save();
-    return res.status(200).json(foundProfile);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ msg: "Server error" });
   }
 });
 

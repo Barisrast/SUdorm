@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./SideBar.css";
-// import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 import PropTypes from "prop-types";
