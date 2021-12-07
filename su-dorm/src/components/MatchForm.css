@@ -42,7 +42,8 @@ input[type=text], input[type=number], textarea {
 }
 .save-btn{
     margin-top: 10px;
-    background: white;
+    background: blue;
+    color: white;
     width: 10%;
 }
 .save-btn:hover{

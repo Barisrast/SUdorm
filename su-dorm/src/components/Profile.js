@@ -8,7 +8,7 @@ export default function Profile() {
     return (
         <div>
             <SideBar/>
-            <Match/>
+            
         </div>
     )
 }

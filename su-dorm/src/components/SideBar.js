@@ -12,30 +12,30 @@ export default function SideBar() {
                         <h3>NAME SURNAME</h3>
                     </div>
                     <ul>
-                        <li>
-                            <a href="#" >
+                        <li className="list-item-nav">
+                            <a className="nav-item-link" href="/profile" >
                                 <span className="item-nav">Home</span>
                             </a>
                         </li>
                         
-                        <li>
-                            <a href="#">
-                                <span className="item-nav">Forum</span>
+                        <li className="list-item-nav">
+                            <a className="nav-item-link" href="/preferences">
+                                <span className="item-nav">Preferences</span>
                             </a>
                         </li>
                         
-                        <li>
-                            <a href="#">
+                        <li className="list-item-nav">
+                            <a className="nav-item-link" href="/match">
                                 <span className="item-nav">Match</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li className="list-item-nav">
+                            <a className="nav-item-link" href="/settings">
                                 <span className="item-nav">Settings</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li className="list-item-nav">
+                            <a className="nav-item-link" href="#">
                                 <span className="item-nav">Filtered Search</span>
                             </a>
                         </li>
