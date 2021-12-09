@@ -8,7 +8,6 @@ import { LOGOUT } from "./actions/types";
 import Alert from "./components/layout/Alert";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/routing/PrivateRoute";
-import SideBar from "./components/layout/SideBar";
 import ProfileForm from "./components/profile-forms/ProfileForm";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
@@ -55,6 +54,10 @@ const App = () => {
             <Route
               path="create-profile"
               element={<PrivateRoute component={ProfileForm} />}
+            />
+            <Route
+              path="profile/:id"
+              element={<PrivateRoute component={Profile} />}
             />
             <Route
               path="profiles"
