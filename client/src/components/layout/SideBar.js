@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import "./SideBar.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getCurrentProfile, deleteAccount } from "../../actions/profile";
+import { getCurrentProfile } from "../../actions/profile";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
 const SideBar = ({
   getCurrentProfile,
-  deleteAccount,
   auth: { user, isAuthenticated },
   logout,
   profile: { profile },
