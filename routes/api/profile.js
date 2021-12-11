@@ -6,7 +6,7 @@ const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
 const axios = require("axios");
 // bring in normalize to give us a proper url, regardless of what user entered
-const normalize = require("normalize-url");
+// const normalize = require("normalize-url");
 const checkObjectId = require("../../middleware/checkObjectId");
 
 const Profile = require("../../models/Profile");
@@ -91,8 +91,7 @@ router.post(
 
     // normalize social fields to ensure valid url
     for (const [key, value] of Object.entries(socialFields)) {
-      if (value && value.length > 0)
-        socialFields[key] = normalize(value, { forceHttps: true });
+      if (value && value.length > 0) socialFields[key] = value;
     }
     // add to profileFields
     profileFields.social = socialFields;

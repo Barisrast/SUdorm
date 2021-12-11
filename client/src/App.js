@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import "./App.css";
 import Landing from "./components/landing";
 import Login from "./components/auth/login";
@@ -43,33 +44,28 @@ const App = () => {
       <Router>
         <Alert />
         <Routes>
-          <Fragment>
-            <Route exact path="/" element={<Landing />} />
-            <Route exact path="/register" element={<Register />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route
-              path="dashboard"
-              element={<PrivateRoute component={Dashboard} />}
-            />
-            <Route
-              path="create-profile"
-              element={<PrivateRoute component={ProfileForm} />}
-            />
-            <Route
-              path="profile/:id"
-              element={<PrivateRoute component={Profile} />}
-            />
-            <Route
-              path="profiles"
-              element={<PrivateRoute component={Profiles} />}
-            />
-            <Route path="posts" element={<PrivateRoute component={Posts} />} />
-            <Route
-              path="posts/:id"
-              element={<PrivateRoute component={Post} />}
-            />
-            <Route path="/*" element={<NotFound />} />
-          </Fragment>
+          <Route exact path="/" element={<Landing />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route
+            path="dashboard"
+            element={<PrivateRoute component={Dashboard} />}
+          />
+          <Route
+            path="create-profile"
+            element={<PrivateRoute component={ProfileForm} />}
+          />
+          <Route
+            path="profile/:id"
+            element={<PrivateRoute component={Profile} />}
+          />
+          <Route
+            path="profiles"
+            element={<PrivateRoute component={Profiles} />}
+          />
+          <Route path="posts" element={<PrivateRoute component={Posts} />} />
+          <Route path="posts/:id" element={<PrivateRoute component={Post} />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
     </Provider>
