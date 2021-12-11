@@ -146,19 +146,19 @@ router.get(
   }
 );
 
-// @route    GET api/profile/match
-// @desc     Get profile randomly
-// @access   Public
-router.get("/match", async (req, res) => {
-  try {
-    let profileVariable = await Profile.aggregate([{ $sample: { size: 1 } }]);
+// // @route    GET api/profile/match
+// // @desc     Get profile randomly
+// // @access   Public
+// router.get("/match", async (req, res) => {
+//   try {
+//     let profileVariable = await Profile.aggregate([{ $sample: { size: 1 } }]);
 
-    res.json(profileVariable);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
-});
+//     res.json(profileVariable);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).send("Server Error");
+//   }
+// });
 
 // @route    DELETE api/profile
 // @desc     Delete profile, user & posts

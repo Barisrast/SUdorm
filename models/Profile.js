@@ -13,37 +13,30 @@ const ProfileSchema = new mongoose.Schema({
   },
   classYear: {
     type: String,
-    required: true,
   },
   bio: {
     type: String,
   },
   smokerBool: {
     type: Boolean,
-    required: true,
   },
   sleepRoutine: {
     type: String,
-    required: true,
   },
   socialSpectrum: {
     type: String,
   },
   tidiness: {
     type: String,
-    required: true,
   },
   noiseTolerance: {
     type: String,
-    required: true,
   },
   hobbies: {
     type: String,
-    required: true,
   },
   wearHeadphonesBool: {
     type: Boolean,
-    required: true,
   },
   spiritAnimal: {
     type: String,
