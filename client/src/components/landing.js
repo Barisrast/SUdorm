@@ -82,8 +82,10 @@ export const Landing = () => {
               <div className="p-5">
                 <img
                   className="img-fluid rounded-circle"
-                  src="../img/01.jpg"
+                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                   alt="..."
+                  width="500"
+                  height="1000"
                 />
               </div>
             </div>
@@ -107,7 +109,7 @@ export const Landing = () => {
               <div className="p-5">
                 <img
                   className="img-fluid rounded-circle"
-                  src="./img/02.jpg"
+                  src="https://images.unsplash.com/photo-1574279606130-09958dc756f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                   alt="..."
                 />
               </div>
@@ -133,7 +135,7 @@ export const Landing = () => {
               <div className="p-5">
                 <img
                   className="img-fluid rounded-circle"
-                  src="../img/03.jpg"
+                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
                   alt="..."
                 />
               </div>
