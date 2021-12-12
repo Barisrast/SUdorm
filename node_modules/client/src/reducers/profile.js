@@ -9,7 +9,6 @@ import {
 const initialState = {
   profile: null,
   profiles: [],
-  repos: [],
   loading: true,
   error: {},
 };
@@ -42,7 +41,6 @@ function profileReducer(state = initialState, action) {
       return {
         ...state,
         profile: null,
-        repos: [],
       };
     default:
       return state;
