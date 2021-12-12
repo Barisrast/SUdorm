@@ -250,4 +250,55 @@ router.post("/follow/:userToFollowId", auth, async (req, res) => {
   }
 });
 
+// UNFOLLOW A USER
+router.put("/unfollow/:userToUnfollowId", auth, async (req, res) => {
+  try {
+    const { user_id } = req;
+    const { userToUnfollowId } = req.params;
+
+    const user = await FollowerModel.findOne({
+      user: user_id,
+    });
+
+    const userToUnfollow = await FollowerModel.findOne({
+      user: userToUnfollowId,
+    });
+
+    if (!user || !userToUnfollow) {
+      return res.status(404).send("User not found");
+    }
+
+    const isFollowing =
+      user.following.length > 0 &&
+      user.following.filter(
+        (following) => following.user.toString() === userToUnfollowId
+      ).length === 0;
+
+    if (isFollowing) {
+      return res.status(401).send("User Not Followed before");
+    }
+
+    const removeFollowing = await user.following
+      .map((following) => following.user.toString())
+      .indexOf(userToUnfollowId);
+
+    await user.following.splice(removeFollowing, 1);
+    await user.save();
+
+    const removeFollower = await userToUnfollow.followers
+      .map((follower) => follower.user.toString())
+      .indexOf(userId);
+
+    await userToUnfollow.followers.splice(removeFollower, 1);
+    await userToUnfollow.save();
+
+    await removeFollowerNotification(userId, userToUnfollowId);
+
+    return res.status(200).send("Updated");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("server error");
+  }
+});
+
 module.exports = router;
