@@ -83,7 +83,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             </Button>
             <Label className="login-account-label">
               {" "}
-              <Link to="/">Already have an account?</Link>
+              <Link to="/login">Already have an account?</Link>
             </Label>
           </Form>
         </div>
