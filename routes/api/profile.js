@@ -181,7 +181,7 @@ router.delete("/", auth, async (req, res) => {
   }
 });
 // GET FOLLOWERS OF USER
-router.get("/followers/:user_id", authMiddleware, async (req, res) => {
+router.get("/followers/:user_id", auth, async (req, res) => {
   try {
     const { user_id } = req.params;
 
@@ -197,7 +197,7 @@ router.get("/followers/:user_id", authMiddleware, async (req, res) => {
 });
 
 // GET FOLLOWING OF USER
-router.get("/following/:user_id", authMiddleware, async (req, res) => {
+router.get("/following/:user_id", auth, async (req, res) => {
   try {
     const { user_id } = req.params;
 
@@ -206,6 +206,44 @@ router.get("/following/:user_id", authMiddleware, async (req, res) => {
     );
 
     return res.json(user.following);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send("Server Error");
+  }
+});
+
+// FOLLOW A USER
+router.post("/follow/:userToFollowId", auth, async (req, res) => {
+  try {
+    const { user_id } = req;
+    const { userToFollowId } = req.params;
+
+    const user = await FollowerModel.findOne({ user: user_id });
+    const userToFollow = await FollowerModel.findOne({ user: userToFollowId });
+
+    if (!user || !userToFollow) {
+      return res.status(404).send("User not found");
+    }
+
+    const isFollowing =
+      user.following.length > 0 &&
+      user.following.filter(
+        (following) => following.user.toString() === userToFollowId
+      ).length > 0;
+
+    if (isFollowing) {
+      return res.status(401).send("User Already Followed");
+    }
+
+    await user.following.unshift({ user: userToFollowId });
+    await user.save();
+
+    await userToFollow.followers.unshift({ user: userId });
+    await userToFollow.save();
+
+    await newFollowerNotification(userId, userToFollowId);
+
+    return res.status(200).send("Updated");
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server Error");
