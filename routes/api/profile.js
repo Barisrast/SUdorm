@@ -180,5 +180,20 @@ router.delete("/", auth, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+// GET FOLLOWERS OF USER
+router.get("/followers/:user_id", authMiddleware, async (req, res) => {
+  try {
+    const { user_id } = req.params;
+
+    const user = await FollowerModel.findOne({ user: user_id }).populate(
+      "followers.user"
+    );
+
+    return res.json(user.followers);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send("Server Error");
+  }
+});
 
 module.exports = router;
