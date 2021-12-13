@@ -19,7 +19,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <Link to="/profiles" className="btn btn-light">
+          <Link to="/profiles">
             Back To Profiles
           </Link>
           {auth.isAuthenticated &&

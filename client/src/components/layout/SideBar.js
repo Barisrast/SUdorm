@@ -24,7 +24,7 @@ const SideBar = ({
             <img src={user && user.avatar} />
             <h3>{user && user.name}</h3>
           </div>
-          <ul>
+          <ul className="listSideBar">
             <li>
               <Link to="/dashboard">
                 <span className="item-nav">Home</span>
