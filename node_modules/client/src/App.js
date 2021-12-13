@@ -16,6 +16,8 @@ import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
 import NotFound from "./components/layout/NotFound";
 import Messenger from "./components/messenger/Messenger.jsx";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 //redux
 import { Provider } from "react-redux";
@@ -39,6 +41,7 @@ const App = () => {
       if (!localStorage.token) store.dispatch({ type: LOGOUT });
     });
   }, []);
+  const { user } = useContext(AuthContext);
 
   return (
     <Provider store={store}>
@@ -48,7 +51,7 @@ const App = () => {
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/messenger" element={<Messenger />} />
+
           <Route
             path="dashboard"
             element={<PrivateRoute component={Dashboard} />}
@@ -58,12 +61,20 @@ const App = () => {
             element={<PrivateRoute component={ProfileForm} />}
           />
           <Route
+            path="edit-profile"
+            element={<PrivateRoute component={ProfileForm} />}
+          />
+          <Route
             path="profile/:id"
             element={<PrivateRoute component={Profile} />}
           />
           <Route
             path="profiles"
             element={<PrivateRoute component={Profiles} />}
+          />
+          <Route
+            path="messenger"
+            element={<PrivateRoute component={Messenger} />}
           />
           <Route path="posts" element={<PrivateRoute component={Posts} />} />
           <Route path="posts/:id" element={<PrivateRoute component={Post} />} />

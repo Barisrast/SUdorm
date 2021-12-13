@@ -43,8 +43,8 @@ const SideBar = ({
               </a>
             </li>
             <li>
-              <a href="#">
-                <span className="item-nav">Settings</span>
+              <a href="/messenger">
+                <span className="item-nav">Messenger</span>
               </a>
             </li>
             <li>

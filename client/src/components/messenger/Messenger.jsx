@@ -1,5 +1,8 @@
 import "./messenger.css";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Conversation from "../conversations/Conversation";
 import Message from "../message/Message";
 import ChatOnline from "../chatOnline/ChatOnline";
@@ -8,10 +11,10 @@ import axios from "axios";
 import { io } from "socket.io-client";
 import { getCurrentProfile } from "../../actions/profile";
 
-export default function Messenger( { getCurrentProfile,
+const Messenger = ( { getCurrentProfile,
   
   auth: { user },
-  profile: { profile },}) {
+  profile: { profile },}) => {
 
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
@@ -20,7 +23,7 @@ export default function Messenger( { getCurrentProfile,
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const socket = useRef();
-  // const { user } = useContext(auth);
+  // const { user2 } = useContext(auth);
   const scrollRef = useRef();
 
   useEffect(() => {
@@ -160,4 +163,17 @@ export default function Messenger( { getCurrentProfile,
       </div>
     </>
   );
-}
+};
+Messenger.propTypes = {
+
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  profile: state.profile
+});
+
+export default connect(mapStateToProps, {  })(
+  Messenger);
