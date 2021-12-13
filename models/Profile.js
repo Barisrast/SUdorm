@@ -18,7 +18,7 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
   },
   smokerBool: {
-    type: Boolean,
+    type: String,
   },
   sleepRoutine: {
     type: String,
@@ -36,7 +36,7 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
   },
   wearHeadphonesBool: {
-    type: Boolean,
+    type: String,
   },
   spiritAnimal: {
     type: String,
@@ -45,7 +45,7 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
   },
   searchingRoommate: {
-    type: Boolean,
+    type: String,
   },
   social: {
     youtube: {
@@ -64,7 +64,6 @@ const ProfileSchema = new mongoose.Schema({
       type: String,
     },
   },
-  // we might include reviews section if we choose to implement ex-roommate reviews
   date: {
     type: Date,
     default: Date.now,

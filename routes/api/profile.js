@@ -6,7 +6,7 @@ const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
 const axios = require("axios");
 // bring in normalize to give us a proper url, regardless of what user entered
-// const normalize = require("normalize-url");
+const normalize = require("normalize-url");
 const checkObjectId = require("../../middleware/checkObjectId");
 
 const Profile = require("../../models/Profile");
@@ -76,15 +76,31 @@ router.post(
     // build a profile
     const profileFields = {
       user: req.user.id,
-      // website:
-      //   website && website !== ""
-      //     ? normalize(website, { forceHttps: true })
-      //     : "",
-      // skills: Array.isArray(skills)
-      //   ? skills
-      //   : skills.split(",").map((skill) => " " + skill.trim()),
+
       ...rest,
     };
+
+    if (req.body.gender) profileFields.gender = req.body.gender;
+    if (req.body.major) profileFields.major = req.body.major;
+    if (req.body.classYear) profileFields.classYear = req.body.classYear;
+    if (req.body.bio) profileFields.bio = req.body.bio;
+    if (req.body.smokerBool) profileFields.smokerBool = req.body.smokerBool;
+    if (req.body.sleepRoutine)
+      profileFields.sleepRoutine = req.body.sleepRoutine;
+    if (req.body.socialSpectrum)
+      profileFields.socialSpectrum = req.body.socialSpectrum;
+    if (req.body.tidiness) profileFields.tidiness = req.body.tidiness;
+    if (req.body.noiseTolerance)
+      profileFields.noiseTolerance = req.body.noiseTolerance;
+    if (req.body.hobbies) profileFields.hobbies = req.body.hobbies;
+    if (req.body.wearHeadphonesBool)
+      profileFields.wearHeadphonesBool = req.body.wearHeadphonesBool;
+    if (req.body.spiritAnimal)
+      profileFields.spiritAnimals = req.body.spiritAnimal;
+    if (req.body.additionalPreferences)
+      profileFields.additionalPreferences = req.body.additionalPreferences;
+    if (req.body.searchingRoommate)
+      profileFields.searchingRoommate = req.body.searchingRoommate;
 
     // Build socialFields object
     const socialFields = { youtube, twitter, instagram, linkedin, facebook };

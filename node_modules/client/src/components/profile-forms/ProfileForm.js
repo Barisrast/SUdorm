@@ -65,6 +65,7 @@ const ProfileForm = ({
     gender,
     major,
     classYear,
+    smokerBool,
     bio,
     sleepRoutine,
     socialSpectrum,
