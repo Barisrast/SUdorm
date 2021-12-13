@@ -6,8 +6,13 @@ import ChatOnline from "../chatOnline/ChatOnline";
 import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
+import { getCurrentProfile } from "../../actions/profile";
 
-export default function Messenger() {
+export default function Messenger( { getCurrentProfile,
+  
+  auth: { user },
+  profile: { profile },}) {
+
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -15,7 +20,7 @@ export default function Messenger() {
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const socket = useRef();
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(auth);
   const scrollRef = useRef();
 
   useEffect(() => {
