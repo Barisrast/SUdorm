@@ -54,3 +54,9 @@ a.active {
   background: white;
   border-right: 2px solid rgb(5, 68, 104);
 }
+.listSideBar {
+  display: block !important;
+  color: #000 !important;
+  padding: 8px 16px;
+  text-decoration: none;
+}
