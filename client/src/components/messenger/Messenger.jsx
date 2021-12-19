@@ -10,6 +10,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
 import { getCurrentProfile } from "../../actions/profile";
+import SideBar from "../layout/SideBar";
 
 const Messenger = ( { getCurrentProfile,
   
@@ -55,7 +56,7 @@ const Messenger = ( { getCurrentProfile,
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get("/conversations/" + user._id);
+        const res = await axios.get("api/conversations/" + user._id);
         setConversations(res.data);
       } catch (err) {
         console.log(err);
@@ -67,7 +68,7 @@ const Messenger = ( { getCurrentProfile,
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get("/messages/" + currentChat?._id);
+        const res = await axios.get("api/messages/" + currentChat?._id);
         setMessages(res.data);
       } catch (err) {
         console.log(err);
@@ -95,7 +96,7 @@ const Messenger = ( { getCurrentProfile,
     });
 
     try {
-      const res = await axios.post("/messages", message);
+      const res = await axios.post("api/messages", message);
       setMessages([...messages, res.data]);
       setNewMessage("");
     } catch (err) {
@@ -108,8 +109,9 @@ const Messenger = ( { getCurrentProfile,
   }, [messages]);
 
   return (
-    <>
-
+    <div>
+      <SideBar />
+      <section className="container">
       <div className="messenger">
         <div className="chatMenu">
           <div className="chatMenuWrapper">
@@ -161,7 +163,8 @@ const Messenger = ( { getCurrentProfile,
           </div>
         </div>
       </div>
-    </>
+      </section>
+    </div>
   );
 };
 Messenger.propTypes = {

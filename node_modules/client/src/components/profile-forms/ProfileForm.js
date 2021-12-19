@@ -22,6 +22,7 @@ const initialState = {
   noiseTolerance: "",
   hobbies: "",
   spiritAnimal: "",
+  wearHeadPhonesBool: "",
   additionalPreferences: "",
   twitter: "",
   facebook: "",
@@ -299,16 +300,14 @@ const ProfileForm = ({
                 <label>Do You Wear Headphones While consuming media?</label>
                 <input
                   type="radio"
-                  name="Headphones-radio"
-                  id="Headphones-yes"
+                  name="wearHeadphonesBool"
                   value="Yes"
                   onChange={onChange}
                 ></input>
                 <span>Yes</span>
                 <input
                   type="radio"
-                  name="Headphones-radio"
-                  id="Headphones-no"
+                  name="wearHeadphonesBool"
                   value="No"
                   onChange={onChange}
                 ></input>
