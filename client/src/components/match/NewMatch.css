@@ -1,0 +1,22 @@
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+.card img{
+      height: 100%;
+}
+  
+.title {
+    color: grey;
+    font-size: 18px;
+}
+.new-btn{
+      border-radius: 4px;
+      text-align: center;
+      display: block;
+      width: 300px;
+      margin: auto;
+      margin-top: 20px;
+}

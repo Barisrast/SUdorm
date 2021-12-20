@@ -16,8 +16,10 @@ import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
 import NotFound from "./components/layout/NotFound";
 import Messenger from "./components/messenger/Messenger.jsx";
+import Match from "./components/match/Match";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+
 
 //redux
 import { Provider } from "react-redux";
@@ -63,6 +65,10 @@ const App = () => {
           <Route
             path="edit-profile"
             element={<PrivateRoute component={ProfileForm} />}
+          />
+           <Route
+            path="match"
+            element={<PrivateRoute component={Match} />}
           />
           <Route
             path="profile/:id"

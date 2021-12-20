@@ -38,7 +38,7 @@ const SideBar = ({
             </li>
 
             <li>
-              <a href="#">
+              <a href="/match">
                 <span className="item-nav">Match</span>
               </a>
             </li>
