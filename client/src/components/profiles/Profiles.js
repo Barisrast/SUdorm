@@ -5,7 +5,7 @@ import Spinner from "../layout/Spinner";
 import ProfileItem from "./ProfileItem";
 import { getProfiles } from "../../actions/profile";
 import SideBar from "../layout/SideBar";
-import { Container,Row,Col } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
@@ -22,14 +22,30 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           {loading ? (
             <Spinner />
           ) : (
-            <Container style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
-              <Row style={{fontFamily:'cursive', color:'maroon',fontSize:'x-large'}}>DEVELOPERS</Row>
-              <Row style={{fontFamily:'monospace'}}>Browse and connect with developers.</Row>
+            <Container
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Row
+                style={{
+                  fontFamily: "cursive",
+                  color: "maroon",
+                  fontSize: "x-large",
+                }}
+              >
+                Roommates
+              </Row>
+              <Row style={{ fontFamily: "monospace" }}>
+                Browse and connect with roommates.
+              </Row>
               <Row>
                 {profiles.length > 0 ? (
                   profiles.map((profile) => (
                     <ProfileItem key={profile._id} profile={profile} />
-                ))
+                  ))
                 ) : (
                   <h4>No profiles found...</h4>
                 )}
