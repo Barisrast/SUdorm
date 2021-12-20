@@ -13,27 +13,27 @@ const RandomProfile = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
     getProfiles();
   }, [getProfiles]);
-  
+
   var rand = Math.floor(Math.random() * (profiles.length - 0 + 1) + 0);
   return (
     <div>
       <SideBar />
-      <div>
-      {loading ? (
-            <Spinner />
-          ) : (
-            <div>
+      <section className="container">
+        {loading ? (
+          <Spinner />
+        ) : (
+          <div>
             {profiles.length > 0 ? (
-
-               <RandomItem key={profiles[rand]._id} profile={profiles[rand]} />
-
+              <RandomItem key={profiles[rand]._id} profile={profiles[rand]} />
             ) : (
               <h4>No profiles found...</h4>
             )}
-            </div>
-          )}
-      </div>
-      <button className="new-btn" onClick={() =>  window.location.reload(false)}>New Person</button>
+          </div>
+        )}
+      </section>
+      <button className="new-btn" onClick={() => window.location.reload(false)}>
+        New Person
+      </button>
     </div>
   );
 };
