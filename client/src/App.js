@@ -7,7 +7,7 @@ import Login from "./components/auth/login";
 import Register from "./components/auth/register";
 import { LOGOUT } from "./actions/types";
 import Alert from "./components/layout/Alert";
-import Dashboard from "./components/dashboard/Dashboard";
+import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import ProfileForm from "./components/profile-forms/ProfileForm";
 import Profiles from "./components/profiles/Profiles";
@@ -19,7 +19,6 @@ import Messenger from "./components/messenger/Messenger.jsx";
 import Match from "./components/match/Match";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
-
 
 //redux
 import { Provider } from "react-redux";
@@ -66,10 +65,7 @@ const App = () => {
             path="edit-profile"
             element={<PrivateRoute component={ProfileForm} />}
           />
-           <Route
-            path="match"
-            element={<PrivateRoute component={Match} />}
-          />
+          <Route path="match" element={<PrivateRoute component={Match} />} />
           <Route
             path="profile/:id"
             element={<PrivateRoute component={Profile} />}
