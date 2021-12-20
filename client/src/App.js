@@ -16,6 +16,7 @@ import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
 import NotFound from "./components/layout/NotFound";
 import Messenger from "./components/messenger/Messenger.jsx";
+import RandomProfile from "./components/match/RandomProfile";
 import Match from "./components/match/Match";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
@@ -77,6 +78,10 @@ const App = () => {
           <Route
             path="messenger"
             element={<PrivateRoute component={Messenger} />}
+          />
+          <Route
+            path="randomProfile"
+            element={<PrivateRoute component={RandomProfile} />}
           />
           <Route path="posts" element={<PrivateRoute component={Posts} />} />
           <Route path="posts/:id" element={<PrivateRoute component={Post} />} />

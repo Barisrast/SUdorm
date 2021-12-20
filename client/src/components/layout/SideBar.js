@@ -38,7 +38,7 @@ const SideBar = ({
             </li>
 
             <li>
-              <a href="/match">
+              <a href="/randomProfile">
                 <span className="item-nav">Match</span>
               </a>
             </li>
